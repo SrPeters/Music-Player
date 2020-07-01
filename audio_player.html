@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <!-- Folhas de Estilo -->
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <!-- Script JS -->
+    <script src="script.js"></script>
+
+</head>
+<body onload="onLoadPage()">
+    <!--Container Principal -->
+    <section class="containerPlayer">
+        <!--Controle de Áudio -->
+        <audio id="audio" preload="auto">
+            <source src="music/Drunken_Sailor.mp3" type="audio/mp3">
+        </audio>
+        <p class="titulo">Music Player</p>
+
+        <div class="imagem">
+            <img src="img/sunrise.jpg" width="100%" height="100%">
+        </div>
+        <p class="titulomsc">"Drunken_Sailor"</p>
+        
+        <div>
+            <!-- Barra de progresso da música -->
+            <progress id="barra_progresso" 
+                        class="barraProgresso" 
+                        max="0" value="0" ></progress>
+            <br>
+            <!-- Tempo -->
+            <span id="tempo_atual" class="tempo">00:00:00</span> <span> / </span>
+            <span id="tempo_total" class="tempo">00:00:00</span>
+        </div>
+
+        <br>
+
+        <!-- Controles -->
+        <div>
+            <table style="text-align: center;">
+                <tr>
+                    <td> <a href="#" class="botaoPlayer" onclick="pause()"><img src="img/pause.png" width="30%" height="30%"></a></td>
+                    <td> <a href="#" class="botaoPlayer" onclick="play()"><img src="img/play.png" width="30%" height="30%"></a></td>
+                    <td> <a href="#" class="botaoPlayer" onclick="stop()"><img src="img/stop.png" width="30%" height="30%"></a></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+        <!-- Range -->
+        <div>
+            <input type="range" 
+                        min="0.0" 
+                        max="1" 
+                        step="0.1" 
+                        class="volume" 
+                        onchange="volume(this)">
+        </div>
+    </section>
+</body>
+
+</html>
